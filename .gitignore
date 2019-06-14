@@ -1,2 +1,7 @@
 .idea
-target
+target/classes
+target/generated-sources
+target/generated-test-sources
+target/maven-archiver
+target/surfire-reports
+target/test-classes

@@ -1,13 +1,14 @@
 package com.douma.java_diamond;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws Exception
     {
-        System.out.println( "Hello World!" );
+        if(args.length == 0) {
+            throw new Exception("No letter provided");
+        }
+
+        Diamond diamond = new Diamond();
+        System.out.println(diamond.output(args[0].charAt(0)));
     }
 }

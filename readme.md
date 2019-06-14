@@ -71,3 +71,7 @@ E·······E
 number of middle dots = total chars - 2 - total number of outside dots
 number of middle dots = number of middle dots < 0 ? 0 : number of middle dots
 ```
+
+# Build jar
+
+https://www.mkyong.com/maven/how-to-create-a-jar-file-with-maven/

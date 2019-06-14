@@ -36,4 +36,46 @@ class Diamond
         }
         return list;
     }
+
+    private String outputLetter(int index, String letter, int numberOfLetters) throws Exception
+    {
+        int numberOfMiddleDots = this.numberOfMiddleDots(index, numberOfLetters);
+        int numberOfOutsideDots = this.numberOfOutsideDots(index, numberOfLetters);
+
+        String output = "";
+        for(int x = 0; x<numberOfOutsideDots;x++) {
+            output += "·";
+        }
+
+        output += letter;
+        if(numberOfMiddleDots > 0) {
+            for(int x = 0; x<numberOfMiddleDots;x++) {
+                output += "·";
+            }
+            output += letter;
+        }
+
+        for(int x = 0; x<numberOfOutsideDots;x++) {
+            output += "·";
+        }
+        return output;
+    }
+
+    public String output(char letter) throws Exception
+    {
+        List<String> letters = this.listOfLetters(letter);
+        int numberOfLetters = letters.size();
+        String output = "";
+
+        int index = 0;
+        for(String letterLoop : letters) {
+            output += this.outputLetter(index, letterLoop, numberOfLetters) + "\n";
+            index++;
+        }
+        index = index - 2;
+        for(int x = index; x>=0;x--) {
+            output += this.outputLetter(x, letters.get(x), numberOfLetters) + "\n";
+        }
+        return output;
+    }
 }

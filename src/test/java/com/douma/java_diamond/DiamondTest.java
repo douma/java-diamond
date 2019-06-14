@@ -56,4 +56,28 @@ public class DiamondTest extends TestCase
         this.assertEquals("C", diamond.listOfLetters('C').get(2));
         this.assertEquals("D", diamond.listOfLetters('D').get(3));
     }
+
+    public void test_output_b() throws Exception
+    {
+        Diamond diamond = new Diamond();
+        String a = "·A·\n";
+        a += "B·B\n";
+        a += "·A·\n";
+        this.assertEquals(a, diamond.output('B'));
+    }
+
+    public void test_output_e() throws Exception
+    {
+        Diamond diamond = new Diamond();
+        String a = "····A····\n";
+        a += "···B·B···\n";
+        a += "··C···C··\n";
+        a += "·D·····D·\n";
+        a += "E·······E\n";
+        a += "·D·····D·\n";
+        a += "··C···C··\n";
+        a += "···B·B···\n";
+        a += "····A····\n";
+        this.assertEquals(a, diamond.output('E'));
+    }
 }
